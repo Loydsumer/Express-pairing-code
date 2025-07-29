@@ -1,228 +1,122 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
- <title>GURU</title>
- <link rel="stylesheet" type="text/css" href="fontawesome/css/all.min.css">
- <style>
-body {
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-image: url('https://image.lexica.art/full_webp/109e7582-4bce-466e-9a97-d9650140553d');
-  background-size: cover; 
-  background-position: center; 
-  font-family: 'Helvetica', sans-serif;
-  overflow: hidden;
-  margin: 0;
-}
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="GURU BOT" />
+    <link rel="shortcut icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5UU6cV2tYLJO93KkaniWk2zmQ8AYlyv6LpA&usqp=CAU" type="image/x-icon" />
+    <title>QR Code</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap" rel="stylesheet" />
 
-.container {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  max-width: 800px; /* Adjusted max-width */
-  max-height: 1000px; /* Adjusted max-height */
-  border-radius: 0;
-  background-color: rgba(255, 255, 255, 0.8);
-  /* Add a semi-transparent white background to make text more readable */
-  box-shadow: 0 0 17px rgba(0, 0, 0, 0.1);
-  padding: 25px;
+    <style>
+     body,
+html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: "Outfit", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('https://image.lexica.art/full_webp/bf43e634-900b-44f2-8ed9-7749073c2856'); 
+    background-size: cover; 
+    background-position: center; 
+    position: relative;
 }
 
 
-
-.header {
-  text-align: center;
-  padding-top: 20px;
-}
-
-.header h1 {
-  color: #128c7e;
-  font-size: 30px;
-  margin-bottom: 30px;
-}
-
-.main {
-  text-align: center;
-}
-
-.main input {
-  width: calc(100% - 30px); /* Adjusted width */
-  height: 60px;
-  border: none;
-  outline: none;
-  box-sizing: border-box;
-  padding: 15px; /* Add padding for a boxy look */
-  font-size: 16px;
-  margin-bottom: 20px;
-  border-radius: 0; /* Square off the corners */
-  background-color: #f2f2f2;
-  border: 1px solid #ddd;
-}
-
-.main button {
-  padding: 0;
-  background-color: #128c7e;
-  letter-spacing: 0px;
-  font-weight: bold;
-  margin-bottom: 30px;
-  border-radius: 0; /* Square off the corners */
-  width: 100%;
-  height: 50px;
-  font-size: 18px;
-  color: #fff;
-  border: none;
-}
-
-#copyb {
-  padding: 0;
-  background-color: #25d366;
-  letter-spacing: 0px;
-  font-weight: bold;
-  margin-bottom: 20px;
-  border-radius: 0; /* Square off the corners */
-  width: 100%;
-  height: 30px;
-  font-size: 15px;
-  color: #fff;
-  border: none;
-}
-
-#copyb:hover,
-.main button:hover,
-.main input:hover {
-  cursor: pointer;
-  filter: brightness(1.1);
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 
-
-.main input::placeholder {
-  color: #888;
+body::before {
+    content: "GURU BOT";
+    position: fixed;
+    font-size: 3em;
+    color: rgba(255, 255, 255, 0.2); 
+    z-index: -1; 
 }
 
-.main span {
-  position: relative;
-  display: block;
+main.code {
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    max-width: 400px;
+    width: 100%;
 }
 
-.main i {
-  position: absolute;
-  left: 15px;
-  color: #128c7e;
-  font-size: 16px;
-  top: 50%;
-  transform: translateY(-50%);
+div.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+img.code_1 {
+    width: 70%;
+    max-width: 200px;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+h1.title {
+    color: #128c7e;
+    font-weight: 700;
+    font-size: 1.5em;
+    margin-top: 20px;
+}
+
+p.legend {
+    color: #777;
+    font-size: 1em;
+    margin-top: 10px;
+    text-align: center;
 }
 
 
-</style>
+@keyframes scanAnimation {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+img.code_1:hover {
+    animation: scanAnimation 1s ease infinite;
+}
+
+    </style>
 </head>
+
 <body>
- <div class="container">
-  <div class="header">
-   <h1>GURU BOT PAIRING</h1>
-  </div>
-  <div class="main">
-   <form>
-    <span>
-     <i class="fa fa-user"></i>
-     <input type="number" id="number" placeholder="enter your phone number with country code" name="">
-    </span><br>
-     <button id="submit">submit</button>
-<main id="pair"></main>
-   </form>
-  </div>
- </div>
- <link rel="import" href="./loader.html">
- <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.0.0-alpha.1/axios.min.js"
-    ></script>
-    <script>
-      let a = document.getElementById("pair");
-      let b = document.getElementById("submit");
-      let c = document.getElementById("number");
-  
-      let isSubmitting = false;
-      let isCodeDisplayed = false;
-  
-      async function Copy() {
-        let text = document.getElementById("copy").innerText;
-        let obj = document.getElementById("copy");
-        await navigator.clipboard.writeText(obj.innerText.replace('CODE: ', ''));
-        obj.innerText = "COPIED";
-        obj.style = "color:blue;font-weight:bold";
-        obj.size = "5";
-        setTimeout(() => {
-          obj.innerText = text;
-          obj.style = "color:black;font-weight-bold";
-          obj.size = "5";
-        }, 500);
-      }
-  
-      b.addEventListener("click", async (e) => {
-        e.preventDefault();
-  
-        if (isCodeDisplayed) {
-          alert("Please wait for 2 minutes before requesting a new code.");
-          return;
-        }
-  
-        if (isSubmitting) {
-          alert("Please wait for the code before trying to request again.");
-          return;
-        }
-  
-        if (!c.value) {
-          a.innerHTML = '<a style="color:black;font-weight:bold">Enter your WhatsApp number with a country code</a><br><br>';
-        } else if (c.value.replace(/[^0-9]/g, "").length < 11) {
-          a.innerHTML = '<a style="color:black;font-weight:bold">Invalid number format</a><br><br>';
-        } else {
-          isSubmitting = true;
-  
-          const bc = c.value.replace(/[^0-9]/g, "");
-          let bb = "";
-          let bbc = "";
-          const cc = bc.split('');
-          cc.map(a => {
-            bbc += a;
-            if (bbc.length == 3) {
-              bb += " " + a;
-            } else if (bbc.length == 8) {
-              bb += " " + a;
-            } else {
-              bb += a;
-            }
-          });
-  
-          c.type = "text";
-          c.value = "+" + bb;
-          c.style = "color:black;font-size:20px";
-          a.innerHTML = '<a style="color:black;font-weight:bold">Please wait for some time</a><br><br>';
-  
-          try {
-            let {
-              data
-            } = await axios(`/pair?phone=${bc}`);
-            let code = data.code || "Service Unavailable";
-            a.innerHTML = '<font id="copy" onclick="Copy()" style="color:red;font-weight:bold" size="5">CODE: <span style="color:black;font-weight:bold">' + code + '</span></font><br><br><br>';
-            isCodeDisplayed = true;
-  
-            setTimeout(() => {
-              isCodeDisplayed = false;
-            }, 120000); 
-          } catch (error) {
-            
-          } finally {
-            isSubmitting = false;
-          }
-        }
-      });
-    </script>
+    <div class="overlay">
+        <main class="code">
+            <div class="card">
+                <img id="qr-code" class="code_1" src="https://qrcode.guruapi.tech/" alt="GURU BOT" title="Scan the QR code to connect with WhatsApp" />
+                <h1 class="title">GURU BOT QR</h1>
+                <p class="legend">Scan The QR To Get Session id For Guru Bot</p>
+            </div>
+        </main>
+    </div>
 </body>
-  </html>
+
+</html>
